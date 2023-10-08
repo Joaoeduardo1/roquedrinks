@@ -1,0 +1,350 @@
+/* Estilização para o rótulo (label) */
+label {
+    display: block; /* Coloca cada rótulo em uma nova linha */
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 15px; /* Adiciona margem inferior para separação entre rótulos e campos de entrada/select */
+}
+
+/* Estilização para campos de entrada de texto e número */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%; /* Preenche a largura disponível */
+    padding: 5px; /* Adiciona preenchimento interno para melhorar a aparência */
+    margin-bottom: 10px; /* Adiciona margem inferior para espaçamento entre campos */
+    border: 1px solid #ccc; /* Adiciona uma borda cinza */
+    border-radius: 5px; /* Adiciona cantos arredondados */
+    font-size: 14px;
+}
+
+/* Estilização para o botão de envio (submit) */
+input[type="button"] {
+    background-color: #007BFF; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno para melhorar a aparência */
+    margin-top: 10px; /* adicionar margem superior para espaçamente entre campos */
+    border: none; /* Remove a borda padrão do botão */
+    border-radius: 5px; /* Adiciona cantos arredondados ao botão */
+    cursor: pointer; /* Muda o cursor ao passar o mouse sobre o botão */
+    width: 200px;
+    height: 40px;
+    margin-left: 70px; /*adicionar margin da esquerda para a direita*/
+}
+
+/* Estilização para o botão de envio quando o mouse está sobre ele */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Cor de fundo alterada para um tom mais escuro */
+}
+
+
+.carrosel {
+    display: flex;
+    overflow: hidden;
+}
+
+.carrosel img {
+    width: 500px; /* Ocupa a largura total da tela */
+    height: 450px; /* Mantém a proporção da imagem */
+    animation: slide 20s linear infinite; /* Tempo de duração e repetição da animação */
+    object-fit: cover;
+    margin: 10px;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-300%); /* Desloca as imagens horizontalmente */
+    }
+}
+
+
+
+.letra{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #333;
+    height: 6vh;
+}
+
+.letra .paragrafo{
+    margin-right: 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #f1f1f1;
+}
+
+.bar img{
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    margin: 10px;
+    align-items: center;
+}
+
+.bar img:hover{
+    padding: 10px;
+    transition: 0.4s;
+    border: 1px solid #ccc;
+}
+
+/* Media query for screens with a maximum width of 768px */
+@media screen and (max-width:768px){
+
+    html, body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-alex{
+        display: flex;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    nav li{
+        display: none;
+    }
+
+
+    .meio-alex{
+        display: inline;
+        font-size: 10px;
+        margin-right: 100px;
+    }
+
+    .icon{
+        position:fixed;
+        top: 10px;
+        left: 5px;
+        right: -530px;
+        color: #ccc;
+    }
+
+    .pacotes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .parte-pacote1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .balcao-meio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .balcao img{
+        width: 95%;
+        height: auto;
+    }
+
+    .drinks-meio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bebida-meio img{
+        width: 90%;
+        height: auto;
+    }
+
+    .atrativo-meio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .parte-foto img{
+        width: 95%;
+        height: auto;
+    }
+
+    .contexto{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .carrosel img{
+        width: 90%;
+        height: auto;
+        margin-right: 0;
+    }
+}
+  
+@media screen and (max-width:600px) {
+
+    html, body{
+        margin: 0;
+        padding: 0;
+    }
+
+    .background-alex{
+        display: flex;
+        width: 100%;
+        height: 95vh;
+    }
+
+    .logo{
+        display: none;
+    }
+
+    nav li{
+        display: none;
+    }
+
+    .alex-meio-container{
+        margin: 20%;
+    }
+
+    .meio-alex {
+        display: inline;
+        font-size: 18px;
+        margin-right: 100px;
+    }
+
+    .icon{
+        position:fixed;
+        top: 10px;
+        left: 5px;
+        right: -450px;
+        color: #ccc;
+    }
+
+    .pacotes{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .parte-pacote1{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 95%;
+        height: auto;
+        margin-right: 30px;
+    }
+
+    .balcao-meio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px;
+    }
+
+    .balcao img{
+        width: 95%;
+        height: auto;
+    }
+
+    .linha{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        color: #fff;
+        width: 100%;
+        height: 6vh;
+        margin-bottom: 0;
+        font-size: 1.3rem;
+    }
+
+    .fundo{
+        margin: 20px;
+    }
+    
+    .fundo img{
+        width: 550px;
+        height: 348px;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    .drinks-meio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .bebida-meio img{
+        width: 90%;
+        height: auto;
+    }
+
+    .atrativo-meio{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .parte-foto img{
+        width: 95%;
+        height: auto;
+    }
+
+    .contexto{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .carrosel img{
+        width: 90%;
+        height: auto;
+        margin-right: 0;
+        z-index: -100;
+    }
+
+    .modal img{
+        object-fit: cover;
+    }
+    
+    .modal-content {
+        margin: 0 auto;
+        display: flex;
+        width: 600px;
+        height: 70vh;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    
+    footer{
+        margin: 0;
+    }
+}
