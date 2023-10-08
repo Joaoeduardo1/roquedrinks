@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roque Drinks</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="agenda.css">
+  <link rel="stylesheet" href="orçamento.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="icon" type="imagem/x-icon" href="/img/roque.jpg" />
+</head>
+
+<body>
+
+  <div class="background-alex">
+
+    <header>
+      <div class="logo">
+        <img src="img/roque.jpg" alt="">
+      </div>
+
+      <nav>
+        <li>
+          <a href="#pacotes">Pacotes</a>
+        </li>
+
+        <li>
+          <a href="#balcões">Balcões</a>
+        </li>
+
+        <li>
+          <a href="#drink">Drink´s</a>
+        </li>
+
+        <li>
+          <a href="#atrativo">Atrativos</a>
+        </li>
+
+        <li>
+          <a href="#sobre">Sobre Nós</a>
+        </li>
+      </nav>
+
+      <div class="icon" id="book-icon">
+        <i class='bx bxs-book-add'></i>
+    </div>
+
+    <div class="book" id="book">
+        <h2 class="book-title">Seu Orçamento</h2>
+        <i class='bx bx-x' id="close-book"></i>
+        <div class="line"></div>
+
+        <div class="contexto">
+            <div class="book-content" id="book-content">
+                <div class="book-box">
+                    <!-- Conteúdo do livro aqui -->
+                    <form id="orcamento-form">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required><br><br>
+
+                        <label for="pacote">Pacote:</label>
+                        <select id="pacote" name="pacote">
+                            <option value=""></option>
+                            <option value="Bar Misto">Bar Misto</option>
+                            <option value="Bar Teen">Bar Teen</option>
+                            <option value="Bar Noivos">Bar Noivos</option>
+                            <option value="Bar Premium">Bar Premium</option>
+                            <option value="Bar Personalizado">Bar Personalizado</option>
+                        </select><br><br>
+
+                        <label for="balcao">Balcão:</label>
+                        <select id="balcao" name="balcao">
+                            <option value=""></option>
+                            <option value="Rústico Reto">Rústico Reto</option>
+                            <option value="Rústico com frente floral e quinas">Rústico com frente floral e quinas</option>
+                            <option value="Bolha reto">Bolha reto + floral</option>
+                            <option value="Bolha curvo">Bolha curvo</option>
+                            <option value="Capitonê curvo">Capitonê curvo</option>
+                        </select><br><br>
+
+                        <label for="quantidade">Quantidade de Pessoas:</label>
+                        <input type="number" id="quantidade" name="quantidade" min="1" required><br><br>
+
+                        <label for="local">Local:</label>
+                        <input type="text" id="local" name="local" required><br><br>
+
+                        <label for="date">Data</label>
+                        <input type="date" name="date" id="date" required>
+
+                        <input type="button" value="Enviar no WhatsApp" onclick="enviarWhatsApp()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </header>
+
+    <div class="alex-meio-container">
+      <div class="meio-alex">
+        <h1>Roque Drinks</h1>
+        <p>Torne suas noites inesquecíveis com a Roque drinks! <br>🍸🎉 Venha desfrutar da melhor seleção de coquetéis <br>
+          artesanais da cidade, preparados com paixão e criatividade <br>por nossa equipe de bartenders talentosos.</p>
+        <p></p>
+        <p></p>
+        <button class="btn">Saiba mais</button>
+      </div>
+    </div>
+
+  </div><!--alex-->
+
+  <div class="init">
+    <h2 class="principal" id="pacotes">Pacotes</h2>
+  </div>
+
+  <div class="parte-pacote">
+    <div class="pacotes">
+      <div class="comanda">
+        <img src="img/misto.JPG" alt="">
+      </div>
+
+      <div class="comanda">
+        <img src="img/teen.JPG" alt="">
+      </div>
+
+      <div class="comanda">
+        <img src="img/noivos.JPG" alt="">
+      </div>
+    </div>
+
+    <div class="parte-pacote1">
+      <div class="comanda">
+        <img src="img/premium.JPG" alt="">
+      </div>
+
+      <div class="comanda">
+        <img src="img/personalidado.JPG" alt="">
+      </div>
+
+      <div class="comanda">
+        <img src="img/asas.JPG" alt="">
+      </div>
+    </div>
+
+  </div><!--pacote-->
+
+  <div class="init-meio" id="balcões">
+    <div class="segundario">
+      <h2>balcões</h2>
+    </div>
+  </div>
+
+  <div class="balcao-meio">
+
+    <div class="balcao">
+      <img src="img/balcao5.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+    <div class="balcao">
+      <img src="img/balcao1.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+  </div><!--balcao-->
+
+  <div class="balcao-meio">
+
+    <div class="fundo">
+      <p class="linha">BOLHA RETO + FLORAL</p>
+      <img src="img/bare2.jpeg" alt="" onclick="expandImage(this)">
+    </div>
+
+    <div class="fundo">
+      <p class="linha">CAPITONÊ CURVO</p>
+      <img src="img/bar3.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+  </div>
+
+  <div class="balcao-meio">
+
+    <div class="balcao">
+      <img src="img/balcao4.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+
+  </div>
+
+  <div class="drinks" id="drink">
+    <div class="bebida">
+      <h2>drink´s</h2>
+    </div>
+  </div>
+
+  <div class="drinks-meio">
+    <div class="bebida-meio">
+      <img src="img/bebida1.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+    <div class="bebida-meio">
+      <img src="img/bebida2.JPG" alt="" onclick="expandImage(this)">
+    </div>
+  </div><!--drinks-->
+
+  <div class="drinks-meio">
+    <div class="bebida-meio">
+      <img src="img/bebida3.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+    <div class="bebida-meio">
+      <img src="img/bebida4.JPG" alt="" onclick="expandImage(this)">
+    </div>
+  </div><!--drinks-->
+
+  <div class="drinks-meio">
+    <div class="bebida-meio">
+      <img src="img/bebida5.JPG" alt="" onclick="expandImage(this)">
+    </div>
+  </div><!--drinks-->
+
+  <div class="atrativos" id="atrativo">
+    <div class="atrativo">
+      <h2>Atrativos</h2>
+    </div>
+  </div>
+
+  <div class="atrativo-meio">
+
+    <div class="parte-foto">
+      <img src="img/atrativo1.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+    <div class="parte-foto">
+      <img src="img/atrativo2.JPG" alt="" onclick="expandImage(this)">
+    </div>
+
+    <div class="parte-foto">
+      <img src="img/atrativo3.JPG" alt="" onclick="expandImage(this)">
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content mobile-imagem" id="expandedImg">
+  </div>
+
+  <div class="sobre-nos" id="sobre">
+    <div class="sobre">
+      <h2>Sobre Nós</h2>
+    </div>
+  </div>
+
+  <div class="final">
+
+    <div class="contexto">
+      <div class="texto">
+        <p class="texto-init">Ao escolher nossos serviços de barman profissional, você está <br> investindo em uma experiência única e sofisticada
+          para a sua festa. <br> Nossos bartenders trazem uma mistura de habilidade, criatividade e <br> paixão pela coquetelaria que
+          transformará a sua celebração em algo verdadeiramente especial. Deixe-nos cuidar das bebidas e da diversão,<br>
+          enquanto você aproveita ao máximo o seu evento.</p>
+      </div>
+    
+      <div class="carrosel">
+        <img src="img/foto1.JPG" alt="Imagem 1">
+        <img src="img/foto2.JPG" alt="Imagem 2">
+        <img src="img/foto3.JPG" alt="Imagem 3">
+        <img src="img/foto4.JPG" alt="Imagem 4">
+        <img src="img/foto5.JPG" alt="Imagem 5">
+    </div>
+    </div>
+
+  </div>
+ 
+
+  <footer>
+    <div class="letra">
+      <p class="paragrafo">powered by joao.eduardo07</p>
+    </div> 
+  </footer>
+ 
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
