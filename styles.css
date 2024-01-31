@@ -1,344 +1,757 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Poppins:ital,wght@0,600;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: "Inter";
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.background-alex {
-    background: rgba(3, 0, 12, 0.7) url(img/alex.JPG);
-    background-blend-mode: darken;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 130vh;
-    max-width: 100%;
-    
+body{
+    height: 200vh;
 }
 
-.logo img {
-    width: 80px;
-    height: auto;
-    border-radius: 30px;
-    margin-left: 150px;
-}
+/* ESTILIZAÇÃO DO MENU */
 
-header {
+.header{
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
     align-items: center;
-    text-align: center;
-    gap: 3rem;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(64, 62, 62, 0.663);
+    z-index: 1;
 }
 
-nav {
+.logo{
+    color: rgb(194, 220, 27);
+    font-size: 24px;
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.nav-bar ul{
     display: flex;
     gap: 80px;
-    font-size: 1.1rem;
-    font-weight: 600;
 }
 
-nav li a {
+.nav-bar ul li a{
+    display: inline-block;
+    padding: 0 20px;
+    color: #000;
+}
+
+.nav-bar ul li a:hover{
     color: #fff;
+    transform: scale(1.20);
 }
 
-nav li a:hover {
-    color: #979494;
-}
-
-.alex-meio-container {
-    margin-left: 14%;
-    max-width: 100%;
-    margin: 10% 0% 10% 15%;
-}
-
-.meio-alex h1 {
-    font-size: 58px;
-    color: #fff
-}
-
-.meio-alex p {
-    color: #f9f9f9;
-    font-size: 17px;
+.nav-bar button{
+    padding: 10px 40px;
+    font-size: 18px;
     font-weight: 500;
-    margin-top: 1rem;
-    line-height: 25px;
-}
-
-.btn {
-    background-color: rgb(4, 172, 4);
-    padding: 15px;
-    border-radius: 10px;
-    border: none;
-    font-size: 1.2rem;
-    color: #f9f9f9;
-    margin-top: 3rem;
+    background-color: rgb(194, 220, 27);
+    border: 0;
+    border-radius: 30px;
+    display: inline-block;
+    transition: .2s;
     cursor: pointer;
-    width: 150px;
 }
 
-.btn:hover {
-    background-color: rgb(0, 90, 0);
+.nav-bar button:hover{
+    background-color: rgb(125, 142, 11);
 }
 
-.init {
+/* SECTION */
+
+.hidden{
+    opacity: 0;
+    filter: blur(15px);
+    transition: all 2s;
+    transform: translateX(-100%);
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transition: all 2s;
+    transform: translateX(0);
+}
+
+/* ESTILIZAÇÃO DA PAGINA PRINCIPAL */
+
+.background{
+    background: rgba(0, 0, 0, 0.7) url(img/alex.JPG);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+.background > .titulo{
+    font-size: 3em;
+    color: rgb(194, 220, 27); /* Cor do título */
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+    padding: 8% 10%;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translatex(-50%);
+        opacity: 0;
+    }
+    to {
+        transform: translatex(0);
+        opacity: 1;
+    }
+}
+
+.background > .descricao {
+    width: 600px;
+    text-align: justify;
+    margin-top: -60px;
+    margin-left: 9%;
+    font-size: 20px;
+    color: #ffffff;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.background > a #btn {
+    font-size: 1em;
+    margin: 5% 20%;
+    width: 300px;
+    height: 60px;
+    padding: 10px 20px;
+    background-color: rgb(194, 220, 27); /* Cor de fundo padrão */
+    color: #fff; /* Cor do texto padrão */
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    transform: translateY(-50%);
+    opacity: 0;
+    animation: fadeInUp 1.5s forwards;
+}
+
+.background > #btn:hover {
+    background-color: rgb(125, 142, 11); /* Cor de fundo ao passar o mouse */
+    transform: scale(1.05); /* Aumenta a escala ao passar o mouse */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
+}
+
+/* ESTILIZAÇÃO DE IMAGEM */
+
+section > .imagem{
     background: url(img/IMG_E0654.JPG);
     background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
-    height: 15vh;
-    max-width: 100%;
+    height: 70px;
+    margin: 1px 0;
 }
 
-.init {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-top: 2px;
-}
-
-.pacotes {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.parte-pacote1 {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-}
-
-.comanda img {
-    width: 400px;
-    height: 600px;
-    max-width: 100%;
-    object-fit: cover;
-    margin-top: 20px;
-}
-
-.comanda:hover {
-    padding: 8px;
-    border: 1px solid #ccc;
-    transition: 0.5s;
-}
-
-.agenda {
-    width: 100%;
-    height: 40px;
+section > .imagem h2{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 36px;
-    background-color: #ccc;
-    cursor: pointer;
-}
-
-.init-meio {
-    background: url(img/IMG_E0667.JPG);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 15vh;
-    max-width: 100%;
-}
-
-.init-meio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #f9f9f9;
-    font-size: 1.6rem;
-    font-weight: 600;
-}
-
-.drinks {
-    background: url(img/IMG_E0667.JPG);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 15vh;
-    max-width: 100%;
-}
-
-.drinks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.balcao-meio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 30px;
-}
-
-.linha{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000;
-    color: #fff;
-    width: 100%;
-    height: 6vh;
-    margin-bottom: 0;
-    font-size: 1.3rem;
+    padding: 10px 0;
+    color: rgb(194, 220, 27);
 }
 
 .fundo{
-    margin: 10px 40px 10px 20px;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to left, #c2f01d69, #fdf9077c);
 }
 
-.fundo img{
-    width: 550px;
-    height: 348px;
-    max-width: 100%;
+/* ESTILIZAÇÃO DE PACOTES */
+
+section > .pacotes {
+    display: flex;
+    gap: 20px; /* Espaçamento entre as imagens */
+    margin: 0 20px;
+}
+
+section > .pacotes img {
+    width: 300px; /* Ajuste para garantir layout responsivo */
+    height: auto;
+    border-radius: 8px; /* Borda arredondada (opcional) */
+}
+
+/* ESTILIZÇÃO DOS PACOTES */
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3) url(img/onda.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
+}
+
+.card:hover{
+    height: 550px;
+    background: rgba(0, 0, 0, 0.7) url(img/imagemB.png);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card .img-box{
+    position: absolute;
+    width: 250px;
+    height: auto;
+    top: 0;
+    transition: 0.5s;
+}
+
+.card .img-box img{
+    width: 100%;
+    height:  100%;
     object-fit: cover;
 }
 
-.fundo:hover{
-    padding: 10px;
-    transition: 0.4s;
-    border: 1px solid #ccc;
+.card .content{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    padding: 0PX 30PX;
+    text-align: center;
+    height: 30px;
+    overflow: hidden;
+    transition: 0.5s;
 }
 
-.balcao img {
-    width: 650px;
-    height: 400px;
+.card .content p{
+    text-align: justify;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.card:hover .content{
+    top: 20px;
+    height: 550px;
+}
+
+/* ESTILIZAÇÃO DO CARD-LONGA */
+
+.card-longa{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3) url(img/onda.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.5s;
+}
+
+.card-longa:hover{
+    height: 650px;
+    background: rgba(0, 0, 0, 0.7) url(img/imagemB.png);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-longa .img-box{
+    position: absolute;
+    width: 250px;
+    height: auto;
+    top: 0;
+    transition: 0.3s;
+}
+
+.card-longa .img-box img{
+    width: 100%;
+    height:  100%;
     object-fit: cover;
-    margin: 10px;
-    margin-top: 0;
-    align-items: center;
 }
 
-.balcao:hover {
-    padding: 10px;
-    transition: 0.4s;
-    border: 1px solid #ccc;
-}
-
-.livro {
+.card-longa .content{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    background-color: #979494;
-    margin-left: 10px;
-    margin-right: 10px;
-    height: 6vh;
-    cursor: pointer;
-}
-
-.atrativos{
-    background: url(img/IMG_E0667.JPG);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 30%;
     width: 100%;
-    height: 15vh;
-    max-width: 100%;
+    padding: 0PX 30PX;
+    text-align: center;
+    height: 30px;
+    overflow: hidden;
+    transition: 0.6s;
 }
 
-.atrativos{
+.card-longa .content p{
+    text-align: justify;
+    transition: 0.20s;
+    font-size: 16px;
+}
+
+.card-longa:hover .content{
+    top: 20px;
+    height: 750px;
+}
+
+.card span, .card-longa span{
+    color: yellow;
+}
+
+/* FOTO */
+
+.foto{
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
-}
-
-.atrativo{
-    color: #f9f9f9;
-}
-
-.atrativo-meio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin: 20px;
-} 
-
-.parte-foto img{
-    width: 450px;
+    width: 350px;
     height: 300px;
-    margin: 20px ;
-}
-
-.parte-foto:hover{
-    padding: 10px;
-    border: 1px solid #979494;
-    transition: 0.4s;
-    margin: 10px;
-}
-
-
-.drinks-meio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.bebida-meio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.bebida-meio img{
-    width: 600px;
-    height: 300px;
-    margin: 10px;
-}
-
-.sobre-nos{
-    background: url(img/IMG_E0667.JPG);
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0) url(img/onda.jpg);
     background-position: center;
-    background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 15vh;
-    max-width: 100%;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
 }
-.sobre-nos{
+
+.foto:hover{
+    height: 500px;
+    background: rgba(0, 0, 0, 0.7) url(img/asa.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.foto .img-box{
+    position: absolute;
+    width: 250px;
+    height: auto;
+    top: 0;
+    transition: 0.5s;
+}
+
+.foto .img-box img{
+    width: 100%;
+    height:  100%;
+    object-fit: cover;
+}
+
+.foto .content{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    padding: 0PX 30PX;
+    text-align: center;
+    height: 30px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.foto .content p{
+    text-align: justify;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.foto:hover .content{
+    top: 20px;
+    height: 500px;
+}
+
+/* ESTILIZAÇÃO DOS BALCÕES */
+
+.balcao {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Define o tamanho mínimo e máximo das colunas */
+    gap: 10px; /* Espaçamento entre as células */
+    margin-left: -20px;
+}
+
+.balcao-bar1{
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 1.4rem;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7) url(imagem/b1parte2.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
 }
 
-.sobre{
-    color: #f9f9f9;
+.balcao-bar1:hover{
+    background: rgba(153, 153, 153, 0.1) url(img/barflor1.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.texto-init{
-    font-size: 1.3rem;
-    font-weight: 400;
-    margin: 10px;
+.balcao-bar2{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7) url(img/barbolha1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
 }
+
+.balcao-bar2:hover{
+    background: rgba(153, 153, 153, 0.1) url(img/barbolha2.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.balcao-bar3{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7) url(imagem/bar3.JPG);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
+}
+
+.balcao-bar3:hover{
+    background: rgba(153, 153, 153, 0.1) url(imagem/bar3.JPG);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.balcao-bar4{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7) url(img/barbolhacurva1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
+}
+
+.balcao-bar4:hover{
+    background: rgba(153, 153, 153, 0.1) url(img/barbolhacurva2.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.balcao-bar5{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7) url(img/barbolhacurva2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
+}
+
+.balcao-bar5:hover{
+    background: rgba(153, 153, 153, 0.1) url(img/barbolhacurva2.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.balcao-bar6{
+    display: flex;
+    justify-content: center;
+    width: 350px;
+    height: 300px;
+    position: relative;
+    border-radius: 20px;
+    background-blend-mode: darken;
+    box-shadow: 0px 25px 80px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7) url(img/barbolha3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 20px 40px;
+    transition: 0.8s;
+}
+
+.balcao-bar6:hover{
+    background: rgba(153, 153, 153, 0.1) url(img/barbolha3.jpg);
+    background-blend-mode: darken;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-bar{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    padding: 0PX 30PX;
+    text-align: center;
+    height: 30px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.card-bar:hover{
+    top: 20px;
+}
+
+.titulo .topo{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+/* DRINKS */
+
+.bebida{
+    display: flex;
+    overflow-y: hidden;
+    margin: 10px 0;
+}
+
+.bebida img{
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* Adiciona a propriedade object-fit */
+    border-radius: 10px;
+}
+
+.bebida-item{
+    position: relative;
+    text-align: center;
+}
+
+.bebida-item p{
+    position: absolute;
+    right: 80px;
+    bottom: 0;
+    margin: 0 auto;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    font-size: 24px;
+    box-shadow: 0 -3px 30px #fff;
+    border-radius: 0 0 10px 0;
+}
+
+/* SOBRE NÓS */
 
 .contexto{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    margin: 20px;
 }
 
 .texto{
-    margin: 20px;
+    width: 500px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.carrosel{
+    display: flex;
+}
+
+.carrosel img{
+    width: 650px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* ITEM */
+
+.item .imagemR img{
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+}
+
+#book {
+    display: none;
+    position: fixed;
+    top: 2px;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 500px;
+    height: 100vh;
+    text-align: center;
+    z-index: 1;
+}
+
+#book-icon {
+    position: relative;
+}
+
+.book-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.line {
+    border-top: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.contexto {
+    margin-top: 15px;
+}
+
+#orcamento-form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 18px;
+}
+
+input[type="button"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+#close-book {
+    position: absolute;
+    top: -5px;
+    right: 2px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+footer{
+    background-color: #333;
+    margin-top: 10px;
+    height: 50px;
+}
+
+.paragrafo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #ffffff;
 }
