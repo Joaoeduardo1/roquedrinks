@@ -1,0 +1,179 @@
+/* ESTILIZAÇÃO M0BILE */
+
+.menu-desktop {
+    background-color: #000000d3;
+    backdrop-filter: blur(20px);
+    position: absolute;
+    top: 54px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: height 0.6s, visibility 0.5s;
+}
+ 
+.menu-desktop a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 20px 30px;
+    font-size: 16pt;
+}
+
+.menu-desktop a:hover {
+    background-color: #a1a0a080;
+}
+
+.btn-menu {
+    width: 50px;
+    height: 45px;
+    border: 1px solid #ccc;
+    background: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.btn-menu.ativar .linha:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+    background-color: red;
+}
+
+.btn-menu.ativar .linha:nth-child(3) {
+    transform: translateY(-10px) rotate(45deg);
+    background-color: red;
+}
+
+.btn-menu.ativar .linha:nth-child(2) {
+    width: 0;
+}
+
+.linha {
+    width: 30px;
+    height: 4px;
+    background-color: #ccc;
+    display: block;
+    margin: 6px auto;
+    position: relative;
+    transform-origin: center;
+    transition: 0.2s;
+}
+
+.menu-desktop.abrir {
+    visibility: visible;
+    height: calc(100vh - 54px); /* Adjusted from 77px to 54px */
+}
+
+@media screen and (max-width: 1030px){
+    
+    .nav-bar{
+        display: none;
+    }
+
+    .header .logo{
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .btn{
+        font-size: 1rem;
+        margin: auto;
+        width: 100%;
+        height: 60px;
+        padding: 10px 20px;
+        background-color: rgb(194, 220, 27); /* Cor de fundo padrão */
+        color: #fff; /* Cor do texto padrão */
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* ESTILIZAÇÃO DO TITULO */
+
+    .background > .titulo{
+        padding: 20% 10%;
+    }
+
+    .background > .descricao {
+        width: 300px;
+        text-align: justify;
+    }
+    
+    .background > a #btn {
+        margin: 5% 10%;
+    }
+
+    /* ESTILIZAÇÃO DO MENU DESKTOP */
+
+    .btn-menu{
+        display: block;
+    }
+
+    .menu-desktop.abrir{
+        visibility: visible;
+        height: 100vh;
+    }
+
+    /* ESTILIZAÇÃO DOS PACOTES */
+
+    .card-container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+
+    /* ESTILIZAÇÃO DOS BARES */
+
+    /* ESTILIZAÇÃO DAS DRINKS */
+    .bebida{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+
+    .bebida img{
+        width: 100%;
+        height: 400px;
+    }
+
+    .bebida-item p{
+        position: absolute;
+        right: 0px;
+        bottom: 0;
+        margin: 0 auto;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 5px 10px;
+        font-size: 24px;
+        box-shadow: 0 -3px 30px #fff;
+    }
+
+    /* ESTILIZAÇÃO DO SOBRE */
+
+    .contexto{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .texto{
+        width: 350px;
+        font-size: 20px;
+        text-align: justify;
+    }
+    
+    .carrosel{
+        display: flex;
+    }
+    
+    .carrosel img{
+        width: 96%;
+        height: 300px;
+        object-fit: cover;
+        margin: 2%; 
+    }
+}
