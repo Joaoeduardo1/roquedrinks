@@ -149,7 +149,7 @@ body{
     animation: fadeInUp 1.5s forwards;
 }
 
-.background > #btn:hover {
+.background > a #btn:hover {
     background-color: rgb(125, 142, 11); /* Cor de fundo ao passar o mouse */
     transform: scale(1.05); /* Aumenta a escala ao passar o mouse */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma leve sombra */
