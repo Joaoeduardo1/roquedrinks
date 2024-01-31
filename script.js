@@ -1,80 +1,121 @@
-let bookIcon = document.querySelector("#book-icon");
-let book = document.querySelector(".book");
-let closeBook = document.querySelector("#close-book");
+const myObserver = new IntersectionObserver((entries) => {
+    entries.forEach( (entry) => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('show')
+        } else {
+            entry.target.classList.remove('show')
+        }
+    })
+})
 
-// Open Cart
-bookIcon.onclick = () => {
-  book.classList.add("active");
-};
+const elements = document.querySelectorAll('.hidden');
+const element = document.querySelectorAll('background')
 
-// Close Cart
-closeBook.onclick = () => {
-  book.classList.remove("active");
-};
+elements.forEach( (elements) => myObserver.observe(elements))
 
-// Cart Working JS
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", ready);
-} else {
-    ready();
+/* MENU DESKTOP */
+
+const btnMenu = document.getElementById('btn-menu');
+const menuDesktop = document.getElementById('menu-desktop');
+const links = menuDesktop.querySelectorAll('a');
+
+btnMenu.addEventListener('click', toggleMenu);
+
+function toggleMenu() {
+    btnMenu.classList.toggle('ativar');
+    menuDesktop.classList.toggle('abrir');
 }
 
-// Você também pode adicionar funcionalidade para fechar o modal pressionando a tecla Esc
-document.addEventListener("keydown", function(event) {
-  var modal = document.getElementById("modal");
-  if (event.key === "Escape" && modal.style.display === "block") {
-      modal.style.display = "none";
-  }
+// Adiciona um evento de clique para cada link dentro do menu
+links.forEach(link => {
+    link.addEventListener('click', fecharMenu);
 });
 
-// Event listener para o botão de fechar o carrinho
-document.getElementById("close-book").addEventListener("click", function() {
-  var book = document.querySelector(".book");
-  book.style.display = "";
-});
-
-
-
-
-function expandImage(imgElement) {
-  // Exibir o modal
-  var modal = document.getElementById("modal");
-  modal.style.display = "block";
-
-  // Definir a imagem ampliada no modal
-  var expandedImg = document.getElementById("expandedImg");
-  expandedImg.src = imgElement.src;
+function fecharMenu() {
+    btnMenu.classList.remove('ativar');
+    menuDesktop.classList.remove('abrir');
 }
 
-function closeModal() {
-  // Fechar o modal
-  var modal = document.getElementById("modal");
-  modal.style.display = "none";
+function toggleCarrinho() {
+    var carrinho = document.getElementById("book");
+    carrinho.style.display = (carrinho.style.display === "none" || carrinho.style.display === "") ? "block" : "none";
 }
 
-// Substitua 'SEU_NUMERO' pelo número de telefone para o qual deseja enviar a mensagem
+
 function enviarWhatsApp() {
-  var nome = document.getElementById('nome').value;
-  var pacote = document.getElementById('pacote').value;
-  var balcao = document.getElementById('balcao').value;
-  var quantidade = document.getElementById('quantidade').value;
-  var local = document.getElementById('local').value;
-  var date = document.getElementById('date').value;
+    var nome = document.getElementById('nome').value;
+    var pacote = document.getElementById('pacote').value;
+    var escrita = document.getElementById('escrita').value;
+    var bares = document.getElementById('bares').value;
+    var quantidade = document.getElementById('quantidade').value;
+    var local = document.getElementById('local').value;
+    var date = document.getElementById('data').value;
+  
+    var mensagem = `Olá, gostaria de um orçamento para o seguinte evento:
+  nome: ${nome};
+  Pacote: ${pacote};
+  adicionais: ${escrita};
+  Bares: ${bares};
+  Quantidade de Pessoas: ${quantidade};
+  Local: ${local};
+  Data: ${date}`;
+  
+    // Substitua 'SEU_NUMERO_DE_TELEFONE' pelo número de WhatsApp para o qual você deseja enviar a mensagem
+    var numeroWhatsApp = '+5516993751951';
+  
+    // Construa o link do WhatsApp com a mensagem
+    var linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+  
+    // Abra uma nova janela ou guia do navegador com o link do WhatsApp
+    window.open(linkWhatsApp, '_blank');
+  }
 
-  var mensagem = `Olá, gostaria de um orçamento para o seguinte evento:
-Nome: ${nome}
-Pacote: ${pacote}
-Balcão: ${balcao}
-Quantidade de Pessoas: ${quantidade}
-Local: ${local}
-Data: ${date}`;
 
-  // Substitua 'SEU_NUMERO_DE_TELEFONE' pelo número de WhatsApp para o qual você deseja enviar a mensagem
-  var numeroWhatsApp = '+5516993751951';
+  $(document).ready(function(){
+    $('.bebida').slick({
+      autoplay: true, // Ativar autoplay
+      autoplaySpeed: 1200, // Velocidade de troca de slides em milissegundos
+      slidesToShow: 4, // Quantidade de slides visíveis ao mesmo tempo
+      slidesToScroll: 1, // Quantidade de slides a avançar
+      responsive: [
+        {
+          breakpoint: 768, // Para telas menores que 768px
+          settings: {
+            slidesToShow: 2
+          }
+        },
+        {
+          breakpoint: 480, // Para telas menores que 480px
+          settings: {
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  });
 
-  // Construa o link do WhatsApp com a mensagem
-  var linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-  // Abra uma nova janela ou guia do navegador com o link do WhatsApp
-  window.open(linkWhatsApp, '_blank');
-}
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+  
+  function mostrarSlide(n) {
+      if (n >= slides.length) { slideIndex = 0; }
+      if (n < 0) { slideIndex = slides.length - 1; }
+      
+      for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      
+      slides[slideIndex].style.display = "block";  
+  }
+  
+  function avancaSlide(n) {
+      slideIndex += n;
+      mostrarSlide(slideIndex);
+  }
+  
+  function autoAvanca() {
+      avancaSlide(1);
+      setTimeout(autoAvanca, 2000); // Altere o tempo de mudança de slide aqui (em milissegundos)
+  }
+  
+  autoAvanca(); // Inicie o carrossel automático
