@@ -45,7 +45,6 @@ function toggleCarrinho() {
 function enviarWhatsApp() {
     var nome = document.getElementById('nome').value;
     var pacote = document.getElementById('pacote').value;
-    var escrita = document.getElementById('escrita').value;
     var bares = document.getElementById('bares').value;
     var quantidade = document.getElementById('quantidade').value;
     var local = document.getElementById('local').value;
@@ -54,7 +53,6 @@ function enviarWhatsApp() {
     var mensagem = `Olá, gostaria de um orçamento para o seguinte evento:
   nome: ${nome};
   Pacote: ${pacote};
-  adicionais: ${escrita};
   Bares: ${bares};
   Quantidade de Pessoas: ${quantidade};
   Local: ${local};
