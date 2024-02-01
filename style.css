@@ -658,6 +658,10 @@ section > .pacotes img {
 
 /* ITEM */
 
+.item{
+    z-index: 2;
+}
+
 .item .imagemR img{
     position: fixed;
     right: 10px;
@@ -754,4 +758,24 @@ footer{
   align-items: center;
   font-size: 20px;
   color: #ffffff;
+}
+
+.popup {
+    display: flex;
+    position: fixed;
+    bottom: 13%;
+    right: 2%;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    z-index: 1;
+    border-radius: 20px;
+    height: 20px;
+    align-items: center;
+    opacity: 1;
+}
+
+.popup:hover{
+    opacity: 0;
+    z-index: 1;
 }
