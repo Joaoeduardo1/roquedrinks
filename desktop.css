@@ -176,4 +176,27 @@
         object-fit: cover;
         margin: 2%; 
     }
+
+        .item{
+        z-index: 2;
+    }
+
+    .popup {
+        display: flex;
+        position: fixed;
+        bottom: 12%;
+        right: 6%;
+        background-color: white;
+        padding: 20px;
+        border: 2px solid black;
+        z-index: 1;
+        border-radius: 20px;
+        height: 20px;
+        align-items: center;
+        opacity: 1;
+    }
+    
+    .popup:hover{
+        opacity: 0;
+    }
 }
